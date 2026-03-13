@@ -1,0 +1,171 @@
+/* ===== Reset & Base ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #0d1b2a;
+  color: #e0f4ff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===== Header ===== */
+header {
+  background: #112240;
+  padding: 1.25rem 2rem;
+  border-bottom: 2px solid #1e3a5f;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+
+header h1 {
+  font-size: clamp(1.1rem, 3vw, 1.8rem);
+  color: #64dfdf;
+  letter-spacing: 0.03em;
+}
+
+#last-updated {
+  font-size: 0.85rem;
+  color: #8892b0;
+}
+
+/* ===== Main layout ===== */
+main {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+/* ===== Cards ===== */
+.card {
+  background: #112240;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  border: 1px solid #1e3a5f;
+}
+
+.card h2 {
+  font-size: 1.05rem;
+  color: #64dfdf;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.card h3 {
+  font-size: 0.9rem;
+  color: #8892b0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+/* ===== Status banner ===== */
+#status-section {
+  transition: background 0.4s, border-color 0.4s;
+}
+
+#status-section.status-ok {
+  border-color: #20c997;
+  background: #0a2e24;
+}
+
+#status-section.status-leak {
+  border-color: #e63946;
+  background: #2e0a0a;
+}
+
+#system-status {
+  font-size: 1.15rem;
+  font-weight: 600;
+}
+
+.status-ok #system-status  { color: #20c997; }
+.status-leak #system-status { color: #e63946; }
+
+/* ===== Sensor grid ===== */
+.sensor-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1rem;
+}
+
+.sensor-card {
+  text-align: center;
+}
+
+.value {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 700;
+  color: #caf0f8;
+}
+
+.unit {
+  font-size: 0.75rem;
+  color: #8892b0;
+  font-weight: 400;
+}
+
+/* ===== Leak list ===== */
+#leak-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.leak-item {
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: background 0.3s, color 0.3s;
+}
+
+.no-leak {
+  background: #0a2e24;
+  color: #20c997;
+  border: 1px solid #20c997;
+}
+
+.leak-detected {
+  background: #2e0a0a;
+  color: #e63946;
+  border: 1px solid #e63946;
+}
+
+/* ===== Chart ===== */
+.chart-section canvas {
+  max-height: 340px;
+}
+
+/* ===== Footer ===== */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.8rem;
+  color: #4a5568;
+  border-top: 1px solid #1e3a5f;
+}
+
+/* ===== Responsive tweaks ===== */
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
