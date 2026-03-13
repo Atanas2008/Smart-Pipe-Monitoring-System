@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Pipe Monitoring System</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>&#128167; Smart Pipe Monitoring System</h1>
+    <p id="last-updated">Last updated: —</p>
+  </header>
+
+  <main>
+    <!-- Status banner -->
+    <section id="status-section" class="card status-ok">
+      <h2>System Status</h2>
+      <p id="system-status">Awaiting data…</p>
+    </section>
+
+    <!-- Sensor value cards -->
+    <section class="sensor-grid">
+      <div class="card sensor-card">
+        <h3>Flow 1</h3>
+        <p class="value" id="flow1">— <span class="unit">L/min</span></p>
+      </div>
+      <div class="card sensor-card">
+        <h3>Flow 2</h3>
+        <p class="value" id="flow2">— <span class="unit">L/min</span></p>
+      </div>
+      <div class="card sensor-card">
+        <h3>Flow 3</h3>
+        <p class="value" id="flow3">— <span class="unit">L/min</span></p>
+      </div>
+      <div class="card sensor-card">
+        <h3>pH Level</h3>
+        <p class="value" id="ph">—</p>
+      </div>
+    </section>
+
+    <!-- Leak detection -->
+    <section class="card" id="leak-section">
+      <h2>Leak Detection</h2>
+      <ul id="leak-list">
+        <li id="leak1_2" class="leak-item no-leak">&#10003; No leak between Sensor 1 and Sensor 2</li>
+        <li id="leak2_3" class="leak-item no-leak">&#10003; No leak between Sensor 2 and Sensor 3</li>
+      </ul>
+    </section>
+
+    <!-- Flow chart -->
+    <section class="card chart-section">
+      <h2>Flow Sensor History</h2>
+      <canvas id="flowChart" aria-label="Flow sensor readings over time" role="img"></canvas>
+    </section>
+  </main>
+
+  <footer>
+    <p>Smart Pipe Monitoring System &mdash; IoT Dashboard</p>
+  </footer>
+
+  <script src="chart.umd.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
